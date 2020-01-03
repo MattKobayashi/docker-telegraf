@@ -1,2 +1,2 @@
 FROM telegraf:alpine
-RUN apk --update add --no-cache --virtual smartmontools jq
+RUN apk --update add --no-cache --virtual smartmontools jq curl
