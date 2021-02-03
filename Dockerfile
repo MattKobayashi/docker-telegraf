@@ -1,4 +1,4 @@
-FROM telegraf:1.16-alpine
+FROM telegraf:1.17-alpine
 
 RUN apk --no-cache upgrade \
     && apk add --update --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/latest-stable/main/ smartmontools jq curl lm-sensors wget
