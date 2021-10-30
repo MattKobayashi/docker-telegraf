@@ -1,4 +1,4 @@
-FROM telegraf:1.19-alpine
+FROM telegraf:1.20-alpine
 
 USER root
 COPY requirements.txt .
