@@ -1,8 +1,7 @@
-#!/bin/bash
-set -e
+#!/bin/sh -e
 
-if [ "${1:0:1}" = '-' ]; then
-    set -- telegraf "$@"
+if [ $# == 0 ] || [ "${1:0:1}" == "-" ]; then
+  exec telegraf "$@"
+else
+  exec "$@"
 fi
-
-exec "$@"
