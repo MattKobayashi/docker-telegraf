@@ -1,13 +1,9 @@
-FROM telegraf:1.20-alpine
+FROM alpine:3
 
-USER root
-RUN apk --no-cache upgrade \
-    && apk add --update --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/latest-stable/main/ smartmontools jq curl lm-sensors wget python3 \
-    && addgroup telegraf disk
-
-USER telegraf
 COPY requirements.txt .
-RUN python3 -m ensurepip \
+RUN apk --no-cache upgrade \
+    && apk add --update --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/latest-stable/main/ telegraf smartmontools jq curl lm-sensors wget python3 \
+    && python3 -m ensurepip \
     && python3 -m pip install --no-cache -r requirements.txt
 
 WORKDIR /opt/ookla 
