@@ -10,7 +10,7 @@ RUN apk --no-cache upgrade \
     && chmod +x entrypoint.sh
 
 WORKDIR /opt/ookla 
-RUN wget -O - https://install.speedtest.net/app/cli/ookla-speedtest-1.0.0-x86_64-linux.tgz | tar xz
+RUN wget -O - https://install.speedtest.net/app/cli/ookla-speedtest-1.1.1-linux-x86_64.tgz | tar xz
 
 ENTRYPOINT ["/opt/docker-telegraf/entrypoint.sh"]
 LABEL maintainer="matthew@kobayashi.com.au"
